@@ -2,25 +2,42 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * @ORM\Entity   
+ */
 class Bar {
 
-    private int $id;    
-    private string $name;
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private int $id;
+
+    /**
+     * @ORM\Column(length="100")
+     */   
+    private string $enseigne;
+
+    /**
+     * @ORM\Column(length="100")
+     */
     private string $adress;
 
-    public function __construct(string $adress, string $name)
+    public function __construct(string $adress, string $enseigne)
     {
-       $this->name = $name;
+       $this->enseigne = $enseigne;
        $this->adress = $adress;
-
-       $this->id = random_int(1,999999);
     }
     
 
     /**
      * Get the value of id
      */ 
-    public function getId()
+    public function getId() : int
     {
         return $this->id;
     }
@@ -28,9 +45,9 @@ class Bar {
     /**
      * Get the value of name
      */ 
-    public function getName()
+    public function getName() : string
     {
-        return $this->name;
+        return $this->enseigne;
     }
 
     /**
@@ -38,9 +55,9 @@ class Bar {
      *
      * @return  self
      */ 
-    public function setName($name)
+    public function setName(string $enseigne) : self
     {
-        $this->name = $name;
+        $this->enseigne = $enseigne;
 
         return $this;
     }
@@ -48,7 +65,7 @@ class Bar {
     /**
      * Get the value of adress
      */ 
-    public function getAdress()
+    public function getAdress() : string
     {
         return $this->adress;
     }

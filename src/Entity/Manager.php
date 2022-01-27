@@ -2,6 +2,11 @@
 
 namespace App\Entity;
 
-class Manager extends User {
-    
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ORM\Entity
+ */
+class Manager extends User
+{
 }

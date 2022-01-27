@@ -2,6 +2,11 @@
 
 namespace App\Entity;
 
-class Cashier extends User {
-    
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ORM\Entity
+ */
+class Cashier extends User
+{
 }
