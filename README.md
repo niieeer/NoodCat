@@ -7,13 +7,10 @@ composer update
 create MVC pattern
 
 ### Step 3
-create MVC pattern
-
-### Step 4
 composer dump-autoload -o
 
-### Step 5
+### Step 4
 Change database credentials in .env
 
-### Step 6 
+### Step 5 
 START YOUR IMPLEMENTATION
