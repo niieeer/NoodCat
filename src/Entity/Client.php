@@ -11,6 +11,9 @@ use Doctrine\ORM\Mapping as ORM;
 class Client extends User
 {
 
+    /**
+     * @ORM\Column(type="integer")
+     */
     private int $identityCard;
 
     public function __construct(string $lastname, string $firstname, string $email, string $password, DateTime $dateInscription, int $identityCard)
