@@ -18,6 +18,7 @@ $config->setAutoGenerateProxyClasses(1);
 // $config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
 // $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 // database configuration parameters
+
 (new DotEnv())->load();
 $conn = array(
     'driver' => 'pdo_mysql',
@@ -29,4 +30,3 @@ $conn = array(
 
 // obtaining the entity manager
 $entityManager = EntityManager::create($conn, $config);
-

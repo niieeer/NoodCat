@@ -6,17 +6,17 @@ use \DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ORM\Entity
+ * @ORM\Entity
  */
 class Client extends User
 {
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      */
-    private int $identityCard;
+    private string $identityCard;
 
-    public function __construct(string $lastname, string $firstname, string $email, string $password, DateTime $dateInscription, int $identityCard)
+    public function __construct(string $lastname, string $firstname, string $email, string $password, DateTime $dateInscription, string $identityCard)
     {
         parent::__construct($lastname, $firstname, $email, $password, $dateInscription);
 
@@ -26,7 +26,7 @@ class Client extends User
     /**
      * Get the value of IdentityCard
      */
-    public function getIdentityCard(): int
+    public function getIdentityCard(): string
     {
         return $this->identityCard;
     }
@@ -36,7 +36,7 @@ class Client extends User
      *
      * @return  self
      */
-    public function setIdentityCard(int $identityCard): self
+    public function setIdentityCard(string $identityCard): self
     {
         $this->identityCard = $identityCard;
 

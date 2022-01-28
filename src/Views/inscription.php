@@ -6,8 +6,16 @@
 <?php include 'src/Include/header.php'; ?>  
 <div class="form_container">
     <form method="post">
-            <input type="text" name="firstname" id="firstname" placeholder="firstname">
-            <input type="text" name="lastname" id="lastname" placeholder="lastname">
+        <h1>Formulaire Inscription</h1>
+            <input type="text" name="firstname" placeholder="firstname" required>
+            <input type="text" name="lastname" placeholder="lastname" required>
+            <h2>Information compte</h2>
+            <label for="email">Email :</label>
+            <input type="email" name="email" required>
+            <label for="Password">Mot de passe :</label>
+            <input type="password" name="password" required>
+            <h2>Carte identité</h2>
+            <input type="test" name="identityCard" required>
             <input type="submit" name="send" value="envoyer">
         </form>
     </div>
