@@ -3,5 +3,6 @@
     <br>
     <a href="#">Apprenez en plus.</a>
     <a href="#">Portail Employé.</a>
-    <a href="/cats">Liste chat.</a>
+    <a href="/NoodCat/cats">Portail chat.</a>
+    <a href="/NoodCat/bar">Portail bar</a>
 </footer>

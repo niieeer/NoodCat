@@ -5,17 +5,14 @@
 
 <body>
     <?php include 'src/Include/header.php'; ?>
-
     <div class="mainbody">
-        <h1>
-            Cat list page
-        </h1>
         <div class="mainbody_primary">
-            <a href="/NoodCat/cats_add">Ajouter un nouveau chat</a>
-            
+
+            <h1>Bars</h1>
+            <a href="/NoodCat/showbars">Listes des bars</a>
+            <a href="/NoodCat/add_Bar">Ajouter un bar</a>
         </div>
     </div>
-
     <?php include 'src/Include/footer.php'; ?>
 </body>
 

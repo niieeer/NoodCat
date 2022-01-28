@@ -20,8 +20,9 @@ body {
 }
 
 .mainbody_primary {
-    margin: auto;
-    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
 
 .form_container {
