@@ -38,13 +38,11 @@ final class Cat {
      */
     private string $statut;
 
-    public function __construct(int $puceNum, string $description, Bar $adress, Bar $enseigne, string $statut)
+    public function __construct(int $puceNum, string $description, Bar $enseigne)
     {
         $this->puceNum = $puceNum;
         $this->description = $description;
-        $this->adress = $adress;
         $this->enseigne = $enseigne;
-        $this->statut = $statut;
     }
 
 
@@ -92,26 +90,6 @@ final class Cat {
     public function setDescription(string $description) : self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of adress
-     */ 
-    public function getAdress() : Bar
-    {
-        return $this->adress;
-    }
-
-    /**
-     * Set the value of adress
-     *
-     * @return  self
-     */ 
-    public function setAdress(string $adress) : self
-    {
-        $this->adress = $adress;
 
         return $this;
     }

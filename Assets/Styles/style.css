@@ -8,6 +8,8 @@ body {
 .mainbody {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
     background-color: #3788b1;
     height: 100%;
     padding-bottom: 20vh;
@@ -24,29 +26,34 @@ body {
 
 .form_container {
     background-color: #6ea9c7;
-    top: 0% ;
+    top: 0%;
     height: 40vh;
     color: #FFFFFF;
     border-width: 1px;
     border-style: solid;
     border-color: #47a3d1;
     border-radius: 10px;
+    padding: 5vw;
+    text-align: left;
+}
+
+.banner_container {
+    background-color: #ad8061;
+    height: 8.4vh;
 }
 
 .banner_banner {
-
-    background-color: #CB997E;
-
+    background-color: #b65c2c;
     border-radius: 0px 0px 10px 10px;
 }
 
 .banner_banner a {
     float: right;
     color: #DDBEA9;
+    background-color: #91684c;
     text-align: center;
-    padding: 20px 20px;
+    padding: 3vh 3vh;
     text-decoration: none;
-    font-size: 17px;
 }
 
 .banner_banner a:hover {

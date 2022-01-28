@@ -20,8 +20,11 @@ if (isset($_SESSION)) {
         }
     }
     $router->get("/", "App\Controller\AppController@index");
+
     $router->get("/signin", "App\Controller\UserController@showSignIn");
     $router->post("/signin", "App\Controller\UserController@addUser");
     $router->get("/login", "App\Controller\UserController@showLogin");
     $router->post("/login", "App\Controller\UserController@login");
+
+    $router->get("/cats", "App\Controller\CatController@index");
     $router->run();
