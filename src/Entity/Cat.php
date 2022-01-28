@@ -29,13 +29,13 @@ final class Cat {
 
     /**
      * @ORM\ManyToOne(targetEntity="Bar")
-     * @ORM\JoinColumn(referencedColumnName="adress")
+     * @ORM\JoinColumn(name="adress", referencedColumnName="adress")
      */
     private Bar $adress;
 
     /**
      * @ORM\ManyToOne(targetEntity="Bar")
-     * @ORM\JoinColumn(referencedColumnName="enseigne")
+     * @ORM\JoinColumn(name="enseigne", referencedColumnName="enseigne")
      */
     private Bar $enseigne;
 

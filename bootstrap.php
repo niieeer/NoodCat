@@ -17,14 +17,14 @@ $config->setAutoGenerateProxyClasses(1);
 // or if you prefer yaml or XML
 // $config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
 // $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
-
 // database configuration parameters
+(new DotEnv())->load();
 $conn = array(
     'driver' => 'pdo_mysql',
-    'user'     => getenv('APP_USER'),
-    'password' => getenv('APP_PASS'),
-    'dbname'   => getenv('APP_BDD'),
-    'host'     => getenv('APP_HOST')
+    'user'     => "106139_groupe2",
+    'password' => "tibzaq-1fifwa-soxVim",
+    'dbname'   => "pawolanmwen_gp2",
+    'host'     => "mysql-pawolanmwen.alwaysdata.net"
 );
 
 // obtaining the entity manager

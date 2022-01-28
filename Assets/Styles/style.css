@@ -1,14 +1,15 @@
 body {
     margin: 0px;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .mainbody {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     background-color: #3788b1;
     height: 100%;
-
-
     padding-bottom: 20vh;
     color: #FFFFFF;
     border-width: 1px;
@@ -22,9 +23,8 @@ body {
 }
 
 .form_container {
-    position: relative;
     background-color: #6ea9c7;
-top: 0% ;
+    top: 0% ;
     height: 40vh;
     color: #FFFFFF;
     border-width: 1px;
@@ -34,7 +34,7 @@ top: 0% ;
 }
 
 .banner_banner {
-    position: relative;
+
     background-color: #CB997E;
 
     border-radius: 0px 0px 10px 10px;
