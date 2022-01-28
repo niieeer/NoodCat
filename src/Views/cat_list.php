@@ -11,6 +11,7 @@
             Cat list page
         </h1>
         <div class="mainbody_primary">
+            <a href="/cats_add">Ajouter un nouveau chat</a>
             
         </div>
     </div>

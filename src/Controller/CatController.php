@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Cat;
 use App\Helpers\EntityManagerHelper as Em;
+use Doctrine\Common\Collections\Expr\Value;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\EntityRepository;
 
@@ -15,11 +16,16 @@ class CatController
         $repo = new EntityRepository($entityManager, new ClassMetadata("App\Entity\Cat"));
 
         $Cat = $repo->findAll();
-        echo ($Cat);
-        if (empty($_SESSION['email'])) {
-            echo ("email found");
-            include "./src/Views/cat_list.php";
-        }
+        var_dump($Cat);
+
+        if ($_SESSION['email']) {
+            echo ("<br>email found, we consider you logged in<br>");
+            var_dump($_POST);
+            // include "./src/Views/cat_list.php";
+        } else
+            echo ("<br>no email found, you aren't logged in<br>");
+
+        include "./src/Views/cat_list.php";
     }
 
     const NEEDS = [
@@ -27,6 +33,12 @@ class CatController
         "description",
         "bar"
     ];
+
+    public static function showAddCat()
+    {
+        include './src/Views/cat_register.php';
+    }
+
 
     public static function addCat()
     {
