@@ -2,11 +2,12 @@
 <html lang="en">
 
 <?php include 'src/Include/head.php'; ?>
+
 <body>
-<?php include 'src/Include/header.php'; ?>  
-<div class="form_container">
-    <form method="post">
-        <h1>Formulaire Inscription</h1>
+    <?php include 'src/Include/header.php'; ?>
+    <div class="form_container">
+        <form method="post">
+            <h1>Formulaire Inscription</h1>
             <input type="text" name="firstname" placeholder="firstname" required>
             <input type="text" name="lastname" placeholder="lastname" required>
             <h2>Information compte</h2>
@@ -19,7 +20,7 @@
             <input type="submit" name="send" value="envoyer">
         </form>
     </div>
-    <?php include 'src/Include/footer.php'; ?>  
+    <?php include 'src/Include/footer.php'; ?>
 </body>
 
 </html>

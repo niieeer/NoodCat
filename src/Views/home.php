@@ -1,4 +1,6 @@
-<!-- Via index je suppose -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +8,9 @@
 
 <body>
     <div class="mainbody">
-     <?php include 'src/Include/header.php'; ?>
+        <?php include 'src/Include/header.php'; ?>
         <div class="mainbody_primary">
-           <p>Aurevoir l'inscription</p>
+            <p>Aurevoir l'inscription</p>
         </div>
     </div>
     <footer>

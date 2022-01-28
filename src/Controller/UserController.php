@@ -5,8 +5,8 @@ namespace App\Controller;
 use App\Entity\Client;
 use App\Helpers\EntityManagerHelper as Em;
 use Doctrine\ORM\Mapping\ClassMetadata;
+use Doctrine\ORM\EntityRepository;
 use App\Entity\User;
-use App\Helpers\EntityManagerHelper;
 use \DateTime;
 
 class UserController
@@ -38,9 +38,9 @@ class UserController
 
 
             $d =  new DateTime();
-            $user = new Client($_POST["firstname"], $_POST["lastname"], $_POST["email"], $_POST["password"], $d, $_POST["identityCard"]);
+            $user = new Client($_POST["firstname"], $_POST["lastname"], $_POST["email"], password_hash($_POST["password"], PASSWORD_DEFAULT), $d, $_POST["identityCard"]);
 
-            $entityManager = EntityManagerHelper::getEntityManager();
+            $entityManager = Em::getEntityManager();
             $entityManager->persist($user);
             try {
                 $entityManager->flush();
@@ -56,6 +56,11 @@ class UserController
         include("./src/Views/connexion.php");
     }
 
+    const LOG = [
+        "email",
+        "password"
+    ];
+
     public function login()
     {
         if (empty($_POST)) {
@@ -63,10 +68,39 @@ class UserController
         }
 
         if (!empty($_POST)) {
-            foreach (self:: as $key => $value) {
-                # code...
+            foreach (self::LOG as $value) {
+                if (!array_key_exists($value, $_POST)) {
+                    echo "Email ou mot de passe incorrect";
+                    die();
+                }
+                $_POST[$value] = trim(htmlentities(strip_tags($_POST[$value])));
+                if ($_POST[$value] === "") {
+                    echo "Format incorrect";
+                    die();
+                }
             }
+
+            $entityManager = Em::getEntityManager();
+            $repo = new EntityRepository($entityManager, new ClassMetadata("App\Entity\User"));
+
+            $user = $repo->findBy(['email' => $_POST['email']]);
+
+            if (empty($user)) {
+                echo "Cet utilisateur n'existe pas";
+                die();
+            }
+
+            if (password_verify($_POST['password'], $user[0]->getPassword()) === false) {
+                echo "Mot de passe incorrect";
+                die();
+            }
+
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['firstname'] = $user[0]->getFirstname();
+            $_SESSION['type'] = strtolower(str_replace("App\Entity\\", "", get_class($user[0])));
+
+            include("./src/Views/home.php");
+
         }
-       
     }
 }
