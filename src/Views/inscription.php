@@ -6,7 +6,7 @@
 <body>
     <?php include 'src/Include/header.php'; ?>
     <div class="form_container">
-        <form method="post">
+        <form method="post" action="/NoodCat/login">
             <h1>Formulaire Inscription</h1>
             <input type="text" name="firstname" placeholder="firstname" required>
             <input type="text" name="lastname" placeholder="lastname" required>

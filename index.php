@@ -1,4 +1,5 @@
 <?php
+
 use Router\Router;
 require_once('vendor/autoload.php');
 
@@ -24,4 +25,5 @@ if (isset($_SESSION)) {
     $router->post("/signin", "App\Controller\UserController@addUser");
     $router->get("/login", "App\Controller\UserController@showLogin");
     $router->post("/login", "App\Controller\UserController@login");
+
     $router->run();

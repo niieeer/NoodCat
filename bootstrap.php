@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManager;
 
 require_once "vendor/autoload.php";
 require_once 'dotenv.php';
+(new DotEnv())->load();
 
 // Create a simple "default" Doctrine ORM configuration for Annotations
 $isDevMode = true;
@@ -19,7 +20,7 @@ $config->setAutoGenerateProxyClasses(1);
 // $config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 // database configuration parameters
 
-(new DotEnv())->load();
+
 $conn = array(
     'driver' => 'pdo_mysql',
     'user'     => "106139_groupe2",
