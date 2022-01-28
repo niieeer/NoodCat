@@ -5,7 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ORM\Entity
+ * @ORM\Entity
  */
 final class Cat {
 
@@ -29,15 +29,9 @@ final class Cat {
 
     /**
      * @ORM\ManyToOne(targetEntity="Bar")
-     * @ORM\JoinColumn(referencedColumnName="adress")
+     * @ORM\JoinColumn(name="idBar", referencedColumnName="id")
      */
-    private Bar $adress;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Bar")
-     * @ORM\JoinColumn(referencedColumnName="enseigne")
-     */
-    private Bar $enseigne;
+    private Bar $idBar;
 
      /**
      * @ORM\Column(length="100")
