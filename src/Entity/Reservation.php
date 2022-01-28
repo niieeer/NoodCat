@@ -22,6 +22,19 @@ class Reservation
      */
     private DateTime $ReservationTime;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Cashier")
+     * @ORM\JoinColumn(name="cashier_id", referencedColumnName="id")
+     */
+    private Cashier $cashier;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Cat") 
+     * @ORM\JoinColumn(name="cat_id", referencedColumnName="id")
+     */
+    private Cat $cat;
+
     public function __construct(DateTime $ReservationTime)
     {
         $this->ReservationTime = $ReservationTime;
@@ -52,6 +65,46 @@ class Reservation
     public function setReservationTime(DateTime $ReservationTime)
     {
         $this->ReservationTime = $ReservationTime;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cashier
+     */ 
+    public function getCashier() : Cashier
+    {
+        return $this->cashier;
+    }
+
+    /**
+     * Set the value of cashier
+     *
+     * @return  self
+     */ 
+    public function setCashier(Cashier $cashier) : self
+    {
+        $this->cashier = $cashier;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cat
+     */ 
+    public function getCat() : Cat
+    {
+        return $this->cat;
+    }
+
+    /**
+     * Set the value of cat
+     *
+     * @return  self
+     */ 
+    public function setCat(Cat $cat) :self
+    {
+        $this->cat = $cat;
 
         return $this;
     }
