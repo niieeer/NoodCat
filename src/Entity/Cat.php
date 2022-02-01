@@ -27,14 +27,9 @@ final class Cat {
      */
     private string $description;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Bar")
-     * @ORM\JoinColumn(name="idBar", referencedColumnName="id")
-     */
-    private Bar $idBar;
 
      /**
-     * @ORM\Column(length="100")
+     * @ORM\Column(length="100", nullable=true)
      */
     private string $statut;
 

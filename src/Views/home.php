@@ -15,12 +15,7 @@ session_start();
             <p>Premiere visite? <a href="signin">Inscrivez vous ici</a></p>
         </div>
     </div>
-    <footer>
-        Ce footer à été fait gratuitement. Il n'a pas été bien fait.
-        <br>
-        <a href="">Apprenez en plus.</a>
-        
-    </footer>
+    <?php include 'src/Include/footer.php'; ?>
 </body>
 
 
